@@ -1,0 +1,35 @@
+body {
+    background: darkseagreen;
+    margin-top: 5rem;
+}
+
+#pad {
+    padding: 5%;
+}
+
+input,
+select {
+    max-width: 70%;
+}
+
+.bg-warning {
+    padding-top: 30px;
+    border-radius: 250px;
+    animation: fadein 2s linear forwards;
+    opacity: 0;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn-success {
+    padding-left: 5%;
+    padding-right: 5%;
+}

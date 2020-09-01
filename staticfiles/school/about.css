@@ -1,0 +1,445 @@
+@media screen and (min-width: 1200px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        display: flex;
+        background-color: #212529;
+        width: 100%;
+        height: 370px;
+    }
+
+    .portfolio img {
+        border: solid 1px white;
+        border-radius: 10px;
+        width: 18rem;
+        float: right;
+        opacity: 0.6;
+    }
+
+    .portfolio p {
+        flex: 1;
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        display: flex;
+        background-color: #212529;
+        width: 100%;
+        height: 470px;
+    }
+
+    .portfolio img {
+        border: solid 1px white;
+        border-radius: 10px;
+        width: 18rem;
+        float: right;
+        opacity: 0.6;
+    }
+
+    .portfolio p {
+        flex: 1;
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        flex-direction: column;
+        background-color: #212529;
+        width: 100%;
+        height: 750px;
+    }
+
+    .portfolio img {
+        width: 18rem;
+        height: 470px;
+        float: right;
+        opacity: 0.6;
+        border: solid 1px white;
+        border-radius: 10px;
+    }
+
+    .portfolio p {
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        flex-direction: column;
+        background-color: #212529;
+        width: 100%;
+        height: 950px;
+    }
+
+    .portfolio img {
+        width: 18rem;
+        height: 470px;
+        float: right;
+        opacity: 0.6;
+        border: solid 1px white;
+        border-radius: 10px;
+    }
+
+    .portfolio p {
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+
+    .rules {
+        font-size: 1.45em;
+    }
+}
+
+@media screen and (max-width: 537px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        flex-direction: column;
+        background-color: #212529;
+        width: 100%;
+        height: 1050px;
+    }
+
+    .portfolio img {
+        width: 18rem;
+        height: 470px;
+        float: right;
+        opacity: 0.6;
+        border: solid 1px white;
+        border-radius: 10px;
+    }
+
+    .portfolio p {
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+
+    .rules {
+        font-size: 1.45em;
+    }
+}
+
+@media screen and (max-width: 461px) {
+    .btn-primary {
+        margin: 5px;
+    }
+
+    hr {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .portfolio {
+        border-radius: 20px;
+        flex-direction: column;
+        background-color: #212529;
+        width: 100%;
+        height: 1350px;
+    }
+
+    .portfolio img {
+        width: 18rem;
+        height: 470px;
+        float: right;
+        opacity: 0.6;
+        border: solid 1px white;
+        border-radius: 10px;
+    }
+
+    .portfolio p {
+        padding: 10px;
+        font-size: .955rem;
+    }
+
+    .portfolio span {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+
+    .jumbotron-background {
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+        width: 100%;
+        height: auto;
+
+    }
+}

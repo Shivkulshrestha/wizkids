@@ -1,0 +1,91 @@
+.animated {
+    padding-top: 20%;
+    padding-left: 5%;
+}
+
+#foot {
+    border-radius: 30px;
+}
+
+.bg {
+    background-color: #FFE4B5;
+    width: 100%;
+    height: 600px;
+}
+
+#front,
+#back {
+    margin-top: 5%;
+    margin-left: 60%;
+    margin-bottom: 5%;
+    width: 350px;
+    height: 450px;
+    border-radius: 30px;
+}
+
+/*<!--image flipper css starts here  -->*/
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-box-back {
+    transform: rotateY(180deg);
+}
+
+/*<!--image flipper css ends here-->*/
+/*<!--hi animation css starts here-->*/
+.ml14 {
+    font-weight: 200;
+    font-size: 3.2em;
+}
+
+.ml14 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml14 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #343a40;
+    transform-origin: 100% 100%;
+    bottom: 0;
+}
+
+.ml14 .letter {
+    display: inline-block;
+    line-height: 1em;
+    color: #343a40;
+}
+
+/*<!--hi animation css ends here-->*/
