@@ -1,0 +1,34 @@
+{% extends 'school/basic.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'school/gallery.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'school/lightbox.min.css' %}">
+{% endblock %}
+{% block title %} Gallery - Wiz Kids International School {% endblock %}
+{% block body %}
+<div class="container my-4" align="center">
+    <div class="top">Gallery</div>
+    <hr />
+    {% for photo in photos %}
+    <h2 class="name" autocapitalize="on">{{photo.block_name}}</h2>
+    <br>
+    <h4 class="desc" align="center" autocapitalize="on">{{photo.desc}}</h4>
+    <br>
+    <a href="{{photo.image1.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="ml-1" src="{{photo.image1.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image2.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="ml-1" src="{{photo.image2.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image3.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="ml-1" src="{{photo.image3.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image4.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="ml-1" src="{{photo.image4.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image5.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="ml-1" src="{{photo.image5.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image6.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="mt-2 ml-1" src="{{photo.image6.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image7.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="mt-2 ml-1" src="{{photo.image7.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image8.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="mt-2 ml-1" src="{{photo.image8.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image9.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="mt-2 ml-1" src="{{photo.image9.url}}" height="200px" width="200px"></a>
+    <a href="{{photo.image10.url}}" data-lightbox="mygallery" data-title="{{photo.block_name}}<br>{{photo.desc}}"><img class="mt-2 ml-1" src="{{photo.image10.url}}" height="200px" width="200px"></a>
+    <hr />
+    <br />
+    {% endfor %}
+</div>
+{% block js %}
+<script src="{% static 'school/js/lightbox-plus-jquery.min.js' %}"></script>
+{% endblock %}
+{% endblock %}

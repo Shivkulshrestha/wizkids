@@ -1,0 +1,171 @@
+{% extends 'school/basic.html' %}
+{% load static %}
+<!--it copies the code and executes it from the basic.html-->
+<!-- to give the the title of the website according to the page after extending commom html we have to use we have to use the curly braces and % sign in it.-->
+{% block title %} About Us - Wiz Kids International School {% endblock %}
+<!--it is the block of css to write only in this block-->
+<!--#end id is generated to target the ending image for its size-->
+<!--#foot id is generated to target the orange thick line (for copyright line)-->
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'school/about.css' %}">
+{% endblock %}
+<!--in this we define our body elements of our web page -->
+{% block body %}
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="jumbotron-background">
+            <img src="{% static 'school/images/jumbotron.jpg' %}" class="blur ">
+        </div>
+        <div class="container text-white">
+            <h1 class="display-4">Wiz Kids International School</h1>
+            <p class="lead">We at Wiz Kids International School, follow a rigorous academic programme combined with a plenty of co-curricular and
+                extra curricular activities thereby ensuring that the students passing out from our school have an edge over the
+                others to face the challenges in the world and prove to be worthwhile global citizens.</p>
+            <hr style="background-color: #ff6347">
+            <p>There are many more questions which can be cleared only by contacting or visiting us.</p>
+            <a class="btn btn-primary btn-lg mb-4" href="contact" role="button">Contact Us</a>
+            {# this is the testing data#}
+            <div class="portfolio">
+                <img src="{% static 'school/images/mam.png' %}" alt="mam">
+                <p><span>Our Principal</span><br>Mrs Mahua Roy Principal at Wiz kids International School with her great vision and untiring efforts brought a radical change in the field of education.
+                    <br>
+                    WizKids international School teachers strongly believe in harnessing the latest technology in education to enhance the understanding and the innovative tools and unique assessments make the classroom a fun place to learn in. The miraculous efforts provides deep rooted understanding of various stages of development of a child and help them to grow as they want to be.
+                    Here the next generation is taught the meaning of learning and discipline. These are the virtues that will enable these budding lives to succeed in all endeavours of life.
+                    The accomplishment of the motto “ Soaring with pride " is done by providing an environment of academic excellence, psychological soundness and ethical sensitivity where they are
+                    in constant touch with their books while maintaining brain balance through coerced participation and involvement in cultural fests and heritage activities.
+                    The freedom to make mistakes provides the best environment for creativity. The educators here in WizKids presents real life problems to the children and then guide the students to solve the problem by providing them a hands on activity to learn the solution.....
+                    <br>
+                    They are taught to be independent in thought, but with in the frame work of decorum and respect for others.</p>
+            </div>
+            {# this is the testing data#}
+            <div class="container my-4">
+                <!-- Example row of columns -->
+                <p class="buttons">
+                    <a class="btn btn-primary" data-toggle="collapse" href="#one" role="button" aria-expanded="false" aria-controls="one">
+                        Value Education
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#two" role="button" aria-expanded="false" aria-controls="two">
+                        Home Away From Home
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#three" role="button" aria-expanded="false" aria-controls="three">
+                        Academic Excellence
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#four" role="button" aria-expanded="false" aria-controls="four">
+                        Co-Curricular Activities
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#five" role="button" aria-expanded="false" aria-controls="five">
+                        Teaching Strategy
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#six" role="button" aria-expanded="false" aria-controls="six">
+                        Community Service
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#seven" role="button" aria-expanded="false" aria-controls="seven">
+                        Technology
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#eight" role="button" aria-expanded="false" aria-controls="eight">
+                        Individual Attention
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#nine" role="button" aria-expanded="false" aria-controls="nine">
+                        Counselling
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#ten" role="button" aria-expanded="false" aria-controls="ten">
+                        Multicultural
+                    </a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#eleven" role="button" aria-expanded="false" aria-controls="eleven">
+                        To Grow From Strength To Strength
+                    </a>
+                </p>
+                <div class="collapse" id="one">
+                    <div class="card card-body bg-dark">
+                        To create a climate that encourages freedom of thought while inculcating the savor of self-discipline, punctuality, fair play and industry.
+                    </div>
+                </div>
+                <div class="collapse" id="two">
+                    <div class="card card-body bg-dark">
+                        To actualise a ‘home away from home’ atmosphere where a right proportion of care and control is administered catering to the emotional and intellectual needs of a child.
+                    </div>
+                </div>
+                <div class="collapse" id="three">
+                    <div class="card card-body bg-dark">
+                        To nurture heuristic, lifelong learners and who excel in conventional academic demands; explore and discover the inter-connectivity of disciplines and grow into active generators of knowledge.
+                    </div>
+                </div>
+                <div class="collapse" id="four">
+                    <div class="card card-body bg-dark">
+                        To ensure that ALL students gain experience, and appreciate ALL the creative and performing arts thereby promoting the acquisition of team spirit and development of individual skills needed for a holistic growth.
+                    </div>
+                </div>
+                <div class="collapse" id="five">
+                    <div class="card card-body bg-dark">
+                        To practice tailored teaching strategies incorporating latest technology to facilitate the diverse learning styles and intelligence quotients of the student.
+                    </div>
+                </div>
+                <div class="collapse" id="six">
+                    <div class="card card-body bg-dark">
+                        To disseminate awareness of environmental concerns and humanitarian issues and kindle a sense of responsibility towards the amelioration of the needy by working with charity organizations.
+                    </div>
+                </div>
+                <div class="collapse" id="seven">
+                    <div class="card card-body bg-dark">
+                        To allow opportunities for a guided, constructive and age-appropriate use of technology and other resources within and throughout the academic programme.
+                    </div>
+                </div>
+                <div class="collapse" id="eight">
+                    <div class="card card-body bg-dark">
+                        To discover the latent potential in each child through individual attention and providing them with opportunities to hone them to their full potential.
+                    </div>
+                </div>
+                <div class="collapse" id="nine">
+                    <div class="card card-body bg-dark">
+                        To monitor a complementary growth of social, cognitive and spiritual facets of a child and aid in making fulfilling life and career choices.
+                    </div>
+                </div>
+                <div class="collapse" id="ten">
+                    <div class="card card-body bg-dark">
+                        To foster respect for and tolerance of other cultures and creed by creating a multicultural and secular ambience.
+                    </div>
+                </div>
+                <div class="collapse" id="eleven">
+                    <div class="card card-body bg-dark">
+                        To conduct periodic review of all programmes and procedures to ensure consistency and continuous improvement in line with the ideals espoused in the Mission statement and in the Motto of the school.
+                    </div>
+                </div>
+                <hr style="background-color: #ff6347">
+                <h2 class="rules" align="center" style="text-decoration: underline #ff6347;">School Rules and Regulations :</h2>
+                <h4 style="padding-top: 20px;">Gifts:</h4>
+                <p>Giving money or gifts to the staff members is prohibited. </p>
+                <h4 style="padding-top: 20px;">Medical:</h4>
+                <p>The school will not be held responsible for any injury suffered by a student, for his/ her loss of life during activities such as games, sport, gymnastics, boxing, swimming, sailing / boat pulling, mountaineering expedition and camping. The consent of the parent/guardian is taken for granted if any surgery, is to be performed on a student. A declaration that the school authorities will not be held responsible for any adverse consequences thereof is a statutory demand expected of the parents. However, in case of any emergency, on the advice of the medical authorities, the school will be given permission to carry out emergency surgery. This will be resorted to when time is at a premium and it is difficult to contact the parents and obtain their permission for the operation.</p>
+                <h4 style="padding-top: 20px;">Medical Records:</h4>
+                <p>The complete medical records of the child / ward must be furnished for perusal at the time of admission. The medical report that is submitted must invariably contain all the relevant medical information related to the child since birth.</p>
+                <h4 style="padding-top: 20px;">Medical and Health Care:</h4>
+                <p>Children are examined during each term by the Doctor and the Dentist. Reports of the examination are sent to the parents of children who require treatment. The school authorities reserve the right to refer a student to any specialist for treatment or operation when the need arises, and when time is at a premium. In all normal cases, the parents will be consulted before such action is taken.</p>
+                <h4 style="padding-top: 20px;">Exam Certificates:</h4>
+                <p>The Final external examination certificates of a student should be collected from the school personally by the parents and not by any other person.</p>
+                <h4 style="padding-top: 20px;">Non-Payments of Fees:</h4>
+                <p>The school reserves the right to strike the name of a student off the Roll or stop him/her from appearing for any examination including external examinations for non-payment of fees and other dues before the commencement of such examinations.</p>
+                <h4 style="padding-top: 20px;">Visit By Parents / Guardian:</h4>
+                <p>Only parents are allowed to take the children out from the school. A guardian has to be a blood relation and should be authorized by the parent, to interact with the school and the student. The school reserves its right to reject a guardian.</p>
+                <h4 style="padding-top: 20px;">Money and Other Contraband Items:</h4>
+                <p>Mobiles, chewing gums, perfumes, gel, electronic items and costly items are banned in the school. Such things will be confiscated from the student. The items confiscated will not be returned to the parents or to the students. </p>
+                <h4 style="padding-top: 20px;">Smoking:</h4>
+                <p>Smoking is strictly banned within the school premises for the parents, guardians and visitors. </p>
+                <h4 style="padding-top: 20px;">Wearing of Uniform During Journey:</h4>
+                <p>All students must wear the school uniform during journeys while travelling from and to the school.</p>
+                <h4 style="padding-top: 20px;">Coloured Dress:</h4>
+                <p>Coloured dress is permitted to be worn by the entire school only on the day intimated by school on special ocassions. Children could also be in coloured dress on their birthdays.</p>
+                <h4 style="padding-top: 20px;">Withdrawals:</h4>
+                <p>
+                    Parents are requested to inform the school well in advance of their decision to withdraw their child/children from Wiz Kids International School. The under mentioned regulations will be applicable:-
+                    <br>
+                    Request for withdrawal should be sent by an e-mail or letter duly signed by the Parent and addressed to the Principal, Wiz Kids International School.
+                    <br>
+                    Please note that the Transfer Certificate will be issued only after the full and final settlement of all dues.
+                </p>
+                <h3 align="center" style="text-decoration: underline #ff6347">Thank-You</h3>
+            </div> <!-- /container -->
+        </div>
+    </div>
+</main>
+{% endblock %}

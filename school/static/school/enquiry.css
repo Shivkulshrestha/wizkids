@@ -1,0 +1,36 @@
+body {
+    background: wheat;
+    margin-top: 5rem;
+}
+
+.block1 {
+    margin: 1%;
+    border: solid 3px #212529;
+    border-radius: 1rem;
+}
+
+.intro {
+    text-decoration: underline;
+    margin-top: 1rem;
+    padding: 1%;
+}
+
+.sub-intro {
+    padding: 0 1% 1% 1%;
+}
+
+.intro2 {
+    text-decoration: underline;
+    margin-top: 1rem;
+    padding: 1%;
+}
+
+.sub-intro2 {
+    font-size: 1.1rem;
+    padding: 0 1% 1% 1%;
+    font-style: italic;
+}
+
+.list_of_classes {
+    font-weight: bold;
+}

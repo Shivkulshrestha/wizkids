@@ -1,0 +1,161 @@
+.footer-bottom a {
+    color: #ff6347;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+#navbar {
+    width: 100%;
+}
+
+.container .my-3 .mb-3 {
+    width: 100%;
+}
+
+#bgFooter {
+    height: 61vh;
+    width: 100%;
+    display: flex;
+}
+
+#foot {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.nav-right {
+    float: right;
+}
+
+.nav-left {
+    float: left;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+/* .page-wrapper{
+min-height: 100px;
+} */
+
+.footer {
+    background-color: #212529;
+    color: white;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+
+
+.footer .footer-content {
+
+    height: auto;
+    display: flex;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+
+.footer .footer-bottom {
+    background-color: #343a40;
+    color: #ff6347;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer .footer-content h1,
+.footer .footer-content h2 {
+    color: white;
+
+}
+
+.footer .footer-content .about {
+    text-align: center;
+}
+
+.footer .footer-content .links {
+    text-align: center;
+}
+
+.footer .footer-content .contact-form {
+    text-align: center;
+}
+
+.footer .footer-content .about h1 span {
+    color: red;
+}
+
+
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.footer .footer-content .about .socials a {
+    border: 1px solid grey;
+    width: 45px;
+    height: 41px;
+    padding-top: 5px;
+    margin-right: 5px;
+    line-height: 35px;
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
+    border-radius: 5px;
+    transition: all .3s;
+
+}
+
+.footer .footer-content .about .socials a:hover {
+    border: 1px solid red;
+    color: white;
+    transition: all .3s;
+}
+
+.footer .footer-content .links ul a {
+
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+
+}
+
+.footer .footer-content .links ul a:hover {
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+
+.address span {
+    color: red;
+}
+
+.footer-section .about p {
+    color: white;
+}
+
+@media (max-width: 690px) {
+    .footer {
+        height: auto;
+    }
+
+    .footer .footer-content {
+        display: grid;
+    }
+}

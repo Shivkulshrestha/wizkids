@@ -1,0 +1,16 @@
+body {
+    margin-top: 5rem;
+    background-color: moccasin;
+}
+
+.first {
+    text-align: center;
+}
+
+.examples ul {
+    display: flex;
+}
+
+.examples li {
+    margin-right: 30px;
+}

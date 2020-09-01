@@ -1,0 +1,42 @@
+{% extends 'school/basic.html' %}
+{% block title %} Donation - Wiz Kids International School {% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'school/donation.css' %}" type="text/css">
+{% endblock %}
+{% block body %}
+<div class="first">
+    <h3>Are you willing to donate something.</h3>
+    <h6>And if you are, then with your donation someone will be very grateful.</h6>
+</div>
+<div class="examples container">
+    <p>You can also donate things which are listed below :</p>
+    <ul class="one">
+        <li>Clothes</li>
+        <li>Books</li>
+        <li>School Uniform</li>
+        <li>Previous Class Study Material Of Your Children</li>
+    </ul>
+</div>
+<section class="donation_form container">
+    <form action="{% url 'donation' %}" method="post" class="form">{% csrf_token %}
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Phone Number</label>
+            <input type="tel" class="form-control" id="exampleFormControlInput1" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Please write down everything you want to donate." rows="3" name="desc" required></textarea>
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</section>
+{% endblock %}

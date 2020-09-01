@@ -1,0 +1,1 @@
+web: gunicorn wizkids.wsgi --log-file -

@@ -1,0 +1,63 @@
+{% extends 'school/basic.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'school/admission.css' %}" />
+{% endblock %}
+{% block title %} Admissions - Wiz Kids International School {% endblock %}
+{% block css %}
+#end{
+width: 15%;
+}
+#foot{
+border-radius: 30px;
+}
+{% endblock %}
+{% block body %}
+<div class="bg-warning" align="center">
+    <form class="container" id="pad" action="{% url 'admission' %}" method="post">{% csrf_token %}
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"><b>Student Name</b></label>
+                    <input type="text" id="name" class="form-control" name="student_name" style="text-transform: capitalize;" required>
+                </div>
+                <div class="form-group">
+                    <label for="name"><b>Admission For Class</b></label>
+                    <select class="form-control" name="admission_class">
+                        <option selected="selected" disabled>Admission for which class</option>
+                        <option value="Play Group">Play Group</option>
+                        <option value="Nursery">Nursery</option>
+                        <option value="L.G.K">L.K.G</option>
+                        <option value="U.K.G">U.K.G</option>
+                        <option value="1st">1st</option>
+                        <option value="2nd">2nd</option>
+                        <option value="3rd">3rd</option>
+                        <option value="4th">4th</option>
+                        <option value="5th">5th</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parents"><b>Parents Name</b></label>
+                    <input type="text" id="parents" class="form-control" name="parents_name" style="text-transform: capitalize;" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phone"><b>Phone Number</b></label>
+                    <input type="tel" id="phone" class="form-control" name="phone_no" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>Email Id</b></label>
+                    <input type="email" id="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" id="address" class="form-control" name="address" style="text-transform: capitalize;" required>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+<!--smtp and mail punch-->

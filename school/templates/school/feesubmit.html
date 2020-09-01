@@ -1,0 +1,77 @@
+{% extends 'school/basic.html' %}
+{% load static %}
+{% block title%} Submit Fee - Wiz Kids International School {% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'school/feesubmit.css' %}">
+{% endblock %}
+{% block body %}
+<div class="bg">
+    <div class="animated" align="center">
+        <h1 class="ml14">
+            <span class="text-wrapper">
+                <span class="letters">Thank You For Visiting.</span>
+                <span class="line"></span>
+            </span>
+        </h1>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" align="center">
+                <div class="modal-header" style="background-color: #ff6347; opacity: 0.9;">
+                    <h4 class="modal-title">Account Details</h4>
+                    <button class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-body" style="background-color: #ffc107; opacity: 0.9;">
+                    <h1>Bank Name:</h1>
+                    <h4>ICICI</h4>
+                    <h1>Account Number:</h1>
+                    <h4>429301000470</h4>
+                    <h1>Recipient's Name:</h1>
+                    <h4>Wiz Kids International</h4>
+                    <h1>IFSC Code:</h1>
+                    <h4>ICIC0004293</h4>
+                    <h1>Branch:</h1>
+                    <h4>Bahodapur</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+$(document).ready(function() {
+    $("#myModal").modal("show");
+});
+</script>
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml14 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({ loop: true })
+    .add({
+        targets: '.ml14 .line',
+        scaleX: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeInOutExpo",
+        duration: 900
+    }).add({
+        targets: '.ml14 .letter',
+        opacity: [0, 1],
+        translateX: [40, 0],
+        translateZ: 0,
+        scaleX: [0.3, 1],
+        easing: "easeOutExpo",
+        duration: 800,
+        offset: '-=600',
+        delay: (el, i) => 150 + 25 * i
+    }).add({
+        targets: '.ml14',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+</script>
+{% endblock %}
