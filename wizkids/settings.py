@@ -15,6 +15,7 @@ import django_heroku
 import dj_database_url
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -23,10 +24,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY_WIZKIDS')
+SECRET_KEY = '0i$8)q@y7+&=4mtdc@*(_2pz!(7+0qa02zpv=m^yp+aa@4_&p*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG_WIZKIDS')
+DEBUG = False
 
 ALLOWED_HOSTS = ['wizkidsinternational.herokuapp.com', '127.0.0.1']
 
