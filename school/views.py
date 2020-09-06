@@ -96,3 +96,20 @@ def donation(request):
         to_list = [settings.EMAIL_HOST_USER, ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/donation.html')
+
+
+def test(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
+        all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
+        all_soochna.save()
+        # send mail
+        subject = name.capitalize() + ' just tried to contact'
+        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [settings.EMAIL_HOST_USER, ]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+    return render(request, 'school/test.html')

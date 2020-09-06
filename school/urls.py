@@ -29,5 +29,6 @@ urlpatterns = [
     path('feesubmit/', views.feesubmit, name="feesubmit"),
     path('download/', views.download, name="download"),
     path('donation/', views.donation, name="donation"),
+    path('test/', views.test, name="test"),
 ]
 handler500
