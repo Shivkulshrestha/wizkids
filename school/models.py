@@ -9,16 +9,16 @@ from django.db import models
 class Photos(models.Model):
     block_name = models.CharField(max_length=50, default="")
     desc = models.CharField(max_length=100, default="")
-    image1 = models.ImageField(upload_to='media/images/', default="")
-    image2 = models.ImageField(upload_to='media/images/', default="")
-    image3 = models.ImageField(upload_to='media/images/', default="")
-    image4 = models.ImageField(upload_to='media/images/', default="")
-    image5 = models.ImageField(upload_to='media/images/', default="")
-    image6 = models.ImageField(upload_to='media/images/', default="")
-    image7 = models.ImageField(upload_to='media/images/', default="")
-    image8 = models.ImageField(upload_to='media/images/', default="")
-    image9 = models.ImageField(upload_to='media/images/', default="")
-    image10 = models.ImageField(upload_to='media/images/', default="")
+    image1 = models.ImageField(upload_to='school/images/', default="")
+    image2 = models.ImageField(upload_to='school/images/', default="")
+    image3 = models.ImageField(upload_to='school/images/', default="")
+    image4 = models.ImageField(upload_to='school/images/', default="")
+    image5 = models.ImageField(upload_to='school/images/', default="")
+    image6 = models.ImageField(upload_to='school/images/', default="")
+    image7 = models.ImageField(upload_to='school/images/', default="")
+    image8 = models.ImageField(upload_to='school/images/', default="")
+    image9 = models.ImageField(upload_to='school/images/', default="")
+    image10 = models.ImageField(upload_to='school/images/', default="")
 
     def __str__(self):  # this function works to show the name of particular variable on the admin panel
         return self.block_name  # in this case the variable is block_name
