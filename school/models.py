@@ -9,7 +9,7 @@ from django.db import models
 class Photos(models.Model):
     block_name = models.CharField(max_length=50, default="")
     desc = models.CharField(max_length=100, default="")
-    image1 = models.ImageField(upload_to='media/images/', default="")
+    image1 = models.ImageField(upload_to='school/static/school/images', default="")
     image2 = models.ImageField(upload_to='media/images/', default="")
     image3 = models.ImageField(upload_to='media/images/', default="")
     image4 = models.ImageField(upload_to='media/images/', default="")
