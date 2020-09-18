@@ -50,7 +50,7 @@ class Admission(models.Model):
 
 class Download(models.Model):
     file_name = models.CharField(max_length=200, blank="")
-    file = models.FileField(upload_to='app_1/docs', default="")
+    file = models.FileField(upload_to='school/docs', default="")
     desc = models.CharField(max_length=1000, blank="")
     new = models.BooleanField(default="False")
     pub_date = models.DateField(default='django.utils.timezone.now()')
