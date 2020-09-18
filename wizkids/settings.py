@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['wizkidsinternational.herokuapp.com', '127.0.0.1']
 
@@ -155,11 +155,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID_WIZKIDS')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY_WIZKIDS')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME_WIZKIDS')
+AWS_STORAGE_BUCKET_NAME = 'wizkidsinternational'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME_WIZKIDS')
+AWS_S3_REGION_NAME = 'us-east-ohio'
 
 # Media Files
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
