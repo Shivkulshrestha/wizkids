@@ -14,7 +14,7 @@ border-radius: 30px;
 {% endblock %}
 {% block body %}
 <div class="bg-warning" align="center">
-    <form class="container" id="pad" action="{% url 'admission' %}" method="post" onsubmit="return validate(this);">{% csrf_token %}
+    <form class="container" id="pad" action="{% url 'admission' %}" method="post">{% csrf_token %}
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -61,19 +61,11 @@ border-radius: 30px;
 </div>
     {% block js %}
         <script>
-        function validate(form) {
-
-            // validation code here ...
-
-
-            if(!valid) {
-                alert('Please correct the errors in the form!');
-                return false;
-            }
-            else {
-                return confirm('Do you really want to submit the form?');
-            }
-        }
+        $(document).ready(function(){
+          $("form").submit(function(){
+            alert("Successfully submitted");
+          });
+        });
         </script>
     {% endblock %}
 {% endblock %}
