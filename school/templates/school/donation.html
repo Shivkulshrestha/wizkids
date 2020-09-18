@@ -19,7 +19,7 @@
     </ul>
 </div>
 <section class="donation_form container">
-    <form action="{% url 'donation' %}" method="post" class="form">{% csrf_token %}
+    <form action="{% url 'donation' %}" method="post" class="form" onsubmit="return validate(this);">{% csrf_token %}
         <div class="form-group">
             <label for="exampleFormControlInput1">Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name" required>
@@ -39,4 +39,21 @@
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </section>
+    {% block js %}
+        <script>
+        function validate(form) {
+
+            // validation code here ...
+
+
+            if(!valid) {
+                alert('Please correct the errors in the form!');
+                return false;
+            }
+            else {
+                return confirm('Do you really want to submit the form?');
+            }
+        }
+        </script>
+    {% endblock %}
 {% endblock %}
