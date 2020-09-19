@@ -16,8 +16,8 @@ def home(request):
         # send mail
         subject = name.capitalize() + ' just tried to contact'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/home.html')
 
@@ -38,8 +38,8 @@ def contact(request):
         # send mail
         subject = name.capitalize() + ' just tried to contact'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/contact.html')
 
@@ -57,8 +57,8 @@ def admission(request):
         # send mail
         subject = 'New Admission Alert'
         message = 'Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize()
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/admission.html')
 
@@ -92,8 +92,8 @@ def donation(request):
         # send mail
         subject = name.capitalize() + ' wanted to donate.'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/donation.html')
 
@@ -109,7 +109,7 @@ def test(request):
         # send mail
         subject = name.capitalize() + ' just tried to contact'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/test.html')

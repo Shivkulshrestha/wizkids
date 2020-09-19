@@ -170,7 +170,7 @@ MEDIA_URL = '/media/'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY_WIZKIDS')
 
@@ -179,6 +179,7 @@ EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
