@@ -1,4 +1,8 @@
+import os
+
 from django.core.mail import send_mail
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 from django.shortcuts import render
 from .models import Soochna, Photos, Admission, Download, Donations
 from django.conf import settings
@@ -14,11 +18,20 @@ def home(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
-        subject = name.capitalize() + ' just tried to contact'
-        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        message = Mail(
+            from_email='rentoranywhere.info@gmail.com',
+            to_emails='rentoranywhere.info@gmail.com',
+            subject=name.capitalize() + ' just tried to contact',
+            html_content='Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
+        try:
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(message)
+            print(response.status_code)
+            print(response.body)
+            print(response.headers)
+        except Exception as e:
+            print(e.message)
+        # send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/home.html')
 
 

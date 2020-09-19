@@ -179,7 +179,6 @@ EMAIL_HOST_USER = os.path.join('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'sendgrid.backend.SendgridBackend'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
