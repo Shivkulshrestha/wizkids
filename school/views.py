@@ -11,10 +11,10 @@ from django.conf import settings
 # Create your views here.
 def home(request):
     if request.method == 'POST':
-        name = request.POST.get('name', '')
-        email = request.POST.get('email', '')
-        phone = request.POST.get('phone', '')
-        desc = request.POST.get('desc', '')
+        name = request.POST('name', '')
+        email = request.POST('email', '')
+        phone = request.POST('phone', '')
+        desc = request.POST('desc', '')
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
