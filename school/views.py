@@ -1,3 +1,7 @@
+import sendgrid
+import os
+
+from sendgrid.helpers.mail import *
 from django.core.mail import send_mail
 from django.shortcuts import render
 from .models import Soochna, Photos, Admission, Download, Donations
@@ -14,11 +18,21 @@ def home(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
-        subject = name.capitalize() + ' just tried to contact'
-        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = 'rentoranywhere.info@gmail.com'
-        to_list = ['rentoranywhere.info@gmail.com', ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        # subject = name.capitalize() + ' just tried to contact'
+        # message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
+        # from_email = 'rentoranywhere.info@gmail.com'
+        # to_list = ['rentoranywhere.info@gmail.com', ]
+        # send_mail(subject, message, from_email, to_list, fail_silently=True)
+        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
+        from_email = Email("rentoranywhere.info@gmail.com")
+        subject = "Hello World from the SendGrid Python Library!"
+        to_email = Email("rentoranywhere.info@gmail.com")
+        content = Content("text/plain", "Hello, Email!")
+        mail = Mail(from_email, subject, to_email, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
     return render(request, 'school/home.html')
 
 
