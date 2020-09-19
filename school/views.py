@@ -16,8 +16,8 @@ def home(request):
         # send mail
         subject = name.capitalize() + ' just tried to contact'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [settings.EMAIL_HOST_USER, ]
+        from_email = 'rentoranywhere.info@gmail.com'
+        to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/home.html')
 
