@@ -23,12 +23,12 @@ def home(request):
         # from_email = 'rentoranywhere.info@gmail.com'
         # to_list = ['rentoranywhere.info@gmail.com', ]
         # send_mail(subject, message, from_email, to_list, fail_silently=True)
-        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         from_email = Email("rentoranywhere.info@gmail.com")
-        subject = "Hello World from the SendGrid Python Library!"
-        to_email = Email("rentoranywhere.info@gmail.com")
-        content = Content("text/plain", "Hello, Email!")
-        mail = Mail(from_email, subject, to_email, content)
+        to_email = To("rentoranywhere.info@gmail.com")
+        subject = "Sending with SendGrid is Fun"
+        content = Content("text/plain", "and easy to do anywhere, even with Python")
+        mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
         print(response.status_code)
         print(response.body)
