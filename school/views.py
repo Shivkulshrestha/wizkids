@@ -77,10 +77,10 @@ def admission(request):
         # send mail
         sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         subject = 'New Admission Alert'
-        message = Content("text/plain", 'Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize())
+        content = Content('Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize())
         from_email = Email("rentoranywhere.info@gmail.com")
-        to_list = To("rentoranywhere.info@gmail.com")
-        mail = Mail(subject, message, from_email, to_list)
+        to_email = To("rentoranywhere.info@gmail.com")
+        mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
         print(response.status_code)
         print(response.body)
@@ -115,11 +115,16 @@ def donation(request):
         don = Donations(name=name, email=email, phone=phone, desc=desc)
         don.save()
         # send mail
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         subject = name.capitalize() + ' wanted to donate.'
-        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
+        content = Content('Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
         from_email = Email("rentoranywhere.info@gmail.com")
-        to_list = ['rentoranywhere.info@gmail.com', ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        to_email = To("rentoranywhere.info@gmail.com")
+        mail = Mail(from_email, to_email, subject, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
     return render(request, 'school/donation.html')
 
 
@@ -132,14 +137,9 @@ def test(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
-        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
-        from_email = Email("rentoranywhere.info@gmail.com")
-        to_email = To("rentoranywhere.info@gmail.com")
         subject = name.capitalize() + ' just tried to contact'
-        content = Content("text/plain", 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
-        mail = Mail(from_email, to_email, subject, content)
-        response = sg.client.mail.send.post(request_body=mail.get())
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
+        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
+        from_email = Email("rentoranywhere.info@gmail.com")
+        to_list = ['rentoranywhere.info@gmail.com', ]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/test.html')
