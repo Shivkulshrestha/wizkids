@@ -1,3 +1,2 @@
-from django.test import TestCase
-
-# Create your tests here.
+import os
+print(os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
