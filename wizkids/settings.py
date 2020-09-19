@@ -176,11 +176,10 @@ SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY_WIZKIDS')
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = os.path.join('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 465
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'sendgrid.backend.SendgridBackend'
-SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
