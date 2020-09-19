@@ -7,10 +7,10 @@ from django.conf import settings
 # Create your views here.
 def home(request):
     if request.method == 'POST':
-        name = request.POST('name', '')
-        email = request.POST('email', '')
-        phone = request.POST('phone', '')
-        desc = request.POST('desc', '')
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
@@ -29,10 +29,10 @@ def about(request):
 def contact(request):
     # here request.POST.get() function receives the data which is named as 'name' mentioned in the models.
     if request.method == 'POST':
-        name = request.POST('name', '')
-        email = request.POST('email', '')
-        phone = request.POST('phone', '')
-        desc = request.POST('desc', '')
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
@@ -46,12 +46,12 @@ def contact(request):
 
 def admission(request):
     if request.method == 'POST':
-        student_name = request.POST('student_name', '')
-        admission_class = request.POST('admission_class', '')
-        parents_name = request.POST('parents_name', '')
-        phone_no = request.POST('phone_no', '')
-        email = request.POST('email', '')
-        address = request.POST('address', '')
+        student_name = request.POST.get('student_name', '')
+        admission_class = request.POST.get('admission_class', '')
+        parents_name = request.POST.get('parents_name', '')
+        phone_no = request.POST.get('phone_no', '')
+        email = request.POST.get('email', '')
+        address = request.POST.get('address', '')
         all_admission = Admission(student_name=student_name, admission_class=admission_class, parents_name=parents_name, phone_no=phone_no, email=email, address=address)
         all_admission.save()
         # send mail
@@ -83,10 +83,10 @@ def download(request):
 
 def donation(request):
     if request.method == 'POST':
-        name = request.POST('name', '')
-        email = request.POST('email', '')
-        phone = request.POST('phone', '')
-        desc = request.POST('desc', '')
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
         don = Donations(name=name, email=email, phone=phone, desc=desc)
         don.save()
         # send mail
@@ -100,10 +100,10 @@ def donation(request):
 
 def test(request):
     if request.method == 'POST':
-        name = request.POST('name', '')
-        email = request.POST('email', '')
-        phone = request.POST('phone', '')
-        desc = request.POST('desc', '')
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
