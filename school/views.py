@@ -18,7 +18,7 @@ def home(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
-        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         from_email = Email("rentoranywhere.info@gmail.com")
         to_email = To("rentoranywhere.info@gmail.com")
         subject = "Sending with SendGrid is Fun"
