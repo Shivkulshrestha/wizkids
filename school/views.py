@@ -1,12 +1,7 @@
-import os
-import sendgrid
-
-from sendgrid.helpers.mail import *
 from django.core.mail import send_mail
 from django.shortcuts import render
 from .models import Soochna, Photos, Admission, Download, Donations
 from django.conf import settings
-
 
 # Create your views here.
 def home(request):
@@ -18,16 +13,11 @@ def home(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
-        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
-        from_email = Email("rentoranywhere.info@gmail.com")
-        to_email = To("rentoranywhere.info@gmail.com")
-        subject = "Sending with SendGrid is Fun"
-        content = Content("text/plain", "and easy to do anywhere, even with Python")
-        mail = Mail(from_email, to_email, subject, content)
-        response = sg.client.mail.send.post(request_body=mail.get())
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
+        subject = name.capitalize() + ' just tried to contact'
+        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [settings.EMAIL_HOST_USER, ]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/home.html')
 
 
