@@ -77,7 +77,7 @@ def admission(request):
         # send mail
         sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         subject = 'New Admission Alert'
-        content = Content('Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize())
+        content = Content("text/plain", 'Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize())
         from_email = Email("rentoranywhere.info@gmail.com")
         to_email = To("rentoranywhere.info@gmail.com")
         mail = Mail(from_email, to_email, subject, content)
@@ -117,7 +117,7 @@ def donation(request):
         # send mail
         sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         subject = name.capitalize() + ' wanted to donate.'
-        content = Content('Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
+        content = Content("text/plain", 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
         from_email = Email("rentoranywhere.info@gmail.com")
         to_email = To("rentoranywhere.info@gmail.com")
         mail = Mail(from_email, to_email, subject, content)
