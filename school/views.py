@@ -23,6 +23,7 @@ def home(request):
         # from_email = 'rentoranywhere.info@gmail.com'
         # to_list = ['rentoranywhere.info@gmail.com', ]
         # send_mail(subject, message, from_email, to_list, fail_silently=True)
+
         sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         from_email = Email("rentoranywhere.info@gmail.com")
         to_email = To("rentoranywhere.info@gmail.com")
@@ -50,11 +51,16 @@ def contact(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
+        from_email = Email("rentoranywhere.info@gmail.com")
+        to_email = To("rentoranywhere.info@gmail.com")
         subject = name.capitalize() + ' just tried to contact'
-        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = 'rentoranywhere.info@gmail.com'
-        to_list = ['rentoranywhere.info@gmail.com', ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        content = Content("text/plain", 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
+        mail = Mail(from_email, to_email, subject, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
     return render(request, 'school/contact.html')
 
 
@@ -69,11 +75,16 @@ def admission(request):
         all_admission = Admission(student_name=student_name, admission_class=admission_class, parents_name=parents_name, phone_no=phone_no, email=email, address=address)
         all_admission.save()
         # send mail
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
         subject = 'New Admission Alert'
-        message = 'Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize()
-        from_email = 'rentoranywhere.info@gmail.com'
-        to_list = ['rentoranywhere.info@gmail.com', ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        message = Content("text/plain", 'Student Name : ' + student_name.capitalize() + '\nAdmission For Class : ' + admission_class + '\nParents Name : ' + parents_name.capitalize() + '\nPhone Number : '+'+91' + phone_no + '\nEmail Id : ' + email + '\nAddress : ' + address.capitalize())
+        from_email = Email("rentoranywhere.info@gmail.com")
+        to_list = To("rentoranywhere.info@gmail.com")
+        mail = Mail(subject, message, from_email, to_list)
+        response = sg.client.mail.send.post(request_body=mail.get())
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
     return render(request, 'school/admission.html')
 
 
@@ -106,7 +117,7 @@ def donation(request):
         # send mail
         subject = name.capitalize() + ' wanted to donate.'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = 'rentoranywhere.info@gmail.com'
+        from_email = Email("rentoranywhere.info@gmail.com")
         to_list = ['rentoranywhere.info@gmail.com', ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/donation.html')
@@ -121,9 +132,14 @@ def test(request):
         all_soochna = Soochna(name=name, email=email, phone=phone, desc=desc)
         all_soochna.save()
         # send mail
+        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY_WIZKIDS'))
+        from_email = Email("rentoranywhere.info@gmail.com")
+        to_email = To("rentoranywhere.info@gmail.com")
         subject = name.capitalize() + ' just tried to contact'
-        message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = 'rentoranywhere.info@gmail.com'
-        to_list = ['rentoranywhere.info@gmail.com', ]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        content = Content("text/plain", 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc)
+        mail = Mail(from_email, to_email, subject, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
     return render(request, 'school/test.html')
