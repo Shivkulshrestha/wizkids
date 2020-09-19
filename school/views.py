@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Soochna, Photos, Admission, Download, Donations
 from django.conf import settings
 
+
 # Create your views here.
 def home(request):
     if request.method == 'POST':
@@ -37,8 +38,8 @@ def contact(request):
         # send mail
         subject = name.capitalize() + ' just tried to contact'
         message = 'Email Id : ' + email + '\nPhone Number : ' + phone + '\nDescription : ' + desc
-        from_email = 'rentoranywhere.info@gmail.com'
-        to_list = ['rentoranywhere.info@gmail.com', ]
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [settings.EMAIL_HOST_USER, ]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
     return render(request, 'school/contact.html')
 
